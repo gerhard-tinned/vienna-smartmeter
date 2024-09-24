@@ -221,10 +221,12 @@ class Smartmeter:
         query = {
             "dateFrom": self._dt_string(date_from),
             "dateTo": self._dt_string(date_to),
-            "period": "DAY",
+            #"period": "DAY",
+            "period": "MONTH",
             "accumulate": False,
             "offset": 0,
-            "dayViewResolution": "QUARTER-HOUR",
+            #"dayViewResolution": "QUARTER-HOUR",
+            "dayViewResolution": "DAY",
         }
         return self._call_api_wstw(endpoint, query=query)
 
